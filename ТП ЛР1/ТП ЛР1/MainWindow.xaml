@@ -12,7 +12,7 @@
             <ColumnDefinition Width="730*"/>
         </Grid.ColumnDefinitions>
         <TextBox Name ="BludoName" HorizontalAlignment="Left" Height="23" Margin="129,297,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnly="True" Grid.ColumnSpan="2"/>
-        <TextBox Name ="BludoKol" HorizontalAlignment="Left" Height="23" Margin="129,328,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox Name ="BludoKol" HorizontalAlignment="Left" Height="23" Margin="129,328,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" TextChanged="BludoKol_TextChanged"/>
         <TextBox Name ="BludoPrice" HorizontalAlignment="Left" Height="23" Margin="129,356,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.763,2.087" IsReadOnly="True" Grid.ColumnSpan="2"/>
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="77,470,0,0" VerticalAlignment="Top" Width="114" Click="Add" Height="35"/>
         <ListView Name="OrderView" HorizontalAlignment="Left" Height="365" Margin="63.778,67,0,0" VerticalAlignment="Top" Width="219" SelectionChanged="OrderView_SelectionChanged" Grid.Column="1">

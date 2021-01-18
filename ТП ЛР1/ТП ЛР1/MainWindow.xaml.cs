@@ -49,6 +49,21 @@ namespace ТП_ЛР1
 
         private void Add(object sender, RoutedEventArgs e)
         {
+            int kol;
+            try
+            {
+                kol = Int32.Parse(BludoKol.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ты шо дурак совсем");
+                return;
+            }
+            if (kol <= 0)
+            {
+                MessageBox.Show("Как тебя на работу вообще взяли");
+                return;
+            }
             OrderView.ItemsSource = oformlenie.Zakaz;
             oformlenie.Vybrat(todayMenu.MyMenu[MenuView.SelectedIndex], Int32.Parse(BludoKol.Text));
             double Itog = 0;
@@ -58,12 +73,10 @@ namespace ТП_ЛР1
             }
             Total.Text = Itog.ToString();
         }
-        int total = 0;
         private void Clean(object sender, RoutedEventArgs e)
 
         {
-            OrderView.ItemsSource = null;
-            total = 0;
+            oformlenie.Zakaz.Clear();
         }
 
         private void Finish(object sender, RoutedEventArgs e)
@@ -74,6 +87,11 @@ namespace ТП_ЛР1
         private void ZakazyView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             OrderView.ItemsSource = oformlenie.Zakazy[ZakazyView.SelectedIndex].SpisokBlud;
+        }
+
+        private void BludoKol_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
